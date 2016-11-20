@@ -6,7 +6,7 @@ open Reporting
 [<EntryPoint>]
 let main argv =
   let mutable account =
-    let name = queryName
+    let name = queryString "Please enter your name:"
     let balance = queryDecimal "Please enter the opening balance:"
 
     let customer = { Customer.Name = name }

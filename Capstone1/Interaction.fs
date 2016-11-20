@@ -1,8 +1,8 @@
 ﻿module Interaction
 open System
 
-let queryName =
-  printfn "Please enter your name:"
+let queryString question =
+  printfn question
   Console.ReadLine()
 
 let rec queryDecimal(question) =
