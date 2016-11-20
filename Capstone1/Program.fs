@@ -5,13 +5,14 @@ open Reporting
 
 [<EntryPoint>]
 let main argv =
-  let name = queryName
-  let balance = queryDecimal "Please enter the opening balance:"
+  let mutable account =
+    let name = queryName
+    let balance = queryDecimal "Please enter the opening balance:"
 
-  let customer = { Customer.Name = name }
-  let mutable account = { Id = Guid.NewGuid()
-                          Owner = customer
-                          Balance = balance }
+    let customer = { Customer.Name = name }
+    { Id = Guid.NewGuid()
+      Owner = customer
+      Balance = balance }
 
   account |> report "Opened account" |> ignore
 
